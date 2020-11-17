@@ -4,8 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "start": "ts-node app",
-    "build": "docker build -t demo-node ."
+    "start": "node app",
+    "build": "tsc",
+    "dockerbuild": "docker build -t demo-node ."
   },
   "devDependencies": {
     "@types/express": "^4.17.9",

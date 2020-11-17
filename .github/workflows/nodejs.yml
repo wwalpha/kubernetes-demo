@@ -36,6 +36,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
 
+      # install nodejs
+      - name: install node.js
+        uses: actions/setup-node@master
+        with:
+          node-version: 12.x
+
+      # install libraries and build
+      - name: install libraries and build
+        working-directory: nodejs
+        run: |
+          yarn install
+          yarn build
+
       # Setup gcloud CLI
       - uses: google-github-actions/setup-gcloud@master
         with:
@@ -43,7 +56,6 @@ jobs:
           project_id: ${{ secrets.GKE_PROJECT }}
 
       # Configure Docker to use the gcloud command-line tool as a credential
-      # helper for authentication
       - run: |-
           gcloud --quiet auth configure-docker
 
@@ -52,7 +64,7 @@ jobs:
           gcloud container clusters get-credentials "$GKE_CLUSTER" --zone "$GKE_ZONE"
 
       # Build the Docker image
-      - name: Build
+      - name: Docker image build
         working-directory: nodejs
         run: |-
           docker build \
