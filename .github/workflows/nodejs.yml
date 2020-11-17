@@ -18,6 +18,7 @@ on:
       - master
     paths:
       - nodejs/*
+      - .github/workflows/nodejs.yml
 
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
