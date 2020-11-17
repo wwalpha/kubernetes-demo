@@ -24,7 +24,7 @@ env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: demo-cluster
   GKE_ZONE: asia-northeast1-a
-  DEPLOYMENT_NAME: gke-test
+  DEPLOYMENT_NAME: demo-nodejs
   IMAGE: demo-nodejs
 
 jobs:

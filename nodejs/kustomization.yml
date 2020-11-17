@@ -1,0 +1,6 @@
+commonLabels:
+  app: demo-nodejs
+
+resources:
+  - deployment.yml
+  - service.yml
