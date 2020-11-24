@@ -11,7 +11,7 @@
 	</parent>
 	<groupId>com.demo</groupId>
 	<artifactId>hotel</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 	<name>hotel</name>
 	<description>Demo project for Spring Boot</description>
@@ -133,8 +133,6 @@
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-lang3</artifactId>
 		</dependency>
-
-
 	</dependencies>
 
 	<build>
@@ -159,7 +157,14 @@
 					</execution>
 				</executions>
 			</plugin>
-		</plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <skipTests>true</skipTests>
+        </configuration>
+      </plugin>
+    </plugins>
 	</build>
 
 </project>
