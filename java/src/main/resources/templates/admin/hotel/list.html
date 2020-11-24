@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{admin}">
+<body>
+<div layout:fragment="content">
+	<div>
+		<form action="#" th:action="@{/hotel/search}" th:object="${hotelSearch}" method="post">
+			<div class="d-flex flex-row p-2">
+				<div class="w-50 input-group">
+					<div class="input-group-prepend">
+				    <span class="input-group-text"><i class="fas fa-search"></i></span>
+				  </div>
+	        <input type="text" class="form-control" placeholder="旅行先を入力してください" >
+	      </div>
+	    </div>
+	    <div class="d-flex flex-row p-2">
+	      <div class="w-50 input-group">
+					<div class="input-group-prepend">
+				    <span class="input-group-text"><i class="fas fa-calendar-alt"></i></span>
+				  </div>
+	        <input type="text" name="dates" class="form-control" />
+	      </div>
+      </div>
+      <div class="d-flex flex-row p-2 justify-content-end">
+      	<div class="p-2">
+      		<button type="submit" class="btn btn-outline-primary w-120">検索</button>
+      	</div>
+      </div>
+		</form>
+	</div>
+	<div class="dropdown-divider"></div>
+		
+    <th:block layout:fragment="script">
+
+        <script>
+        	$('input[name="dates"]').daterangepicker({
+        		locale:{
+        			format: 'YYYY/MM/DD'
+        		}
+        	});
+        </script>
+    </th:block>
+</div>
+
+</body>
+</html>
