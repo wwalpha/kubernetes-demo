@@ -4,13 +4,13 @@ metadata:
   name: fanout-ingress
 spec:
   rules:
-    - http:
-        paths:
-          - path: /nodejs/*
-            backend:
-              serviceName: nodejs
-              servicePort: 8080
-          - path: /java/*
-            backend:
-              serviceName: java
-              servicePort: 8080
+  - http:
+      paths:
+      - path: /nodejs/*
+        backend:
+          serviceName: nodejs-service
+          servicePort: 8080
+      - path: /java/*
+        backend:
+          serviceName: java-service
+          servicePort: 8080
